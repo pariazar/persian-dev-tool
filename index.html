@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>dev tool | created for iran</title>
+        <meta name="description" content="تولید کد ملی رایگان">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <style>
+            .rtl {
+                direction: rtl;
+            }
+            html,body{
+                padding:0;
+                margin:0;
+                background-color: #e5e5e5;
+            }
+    
+            @font-face {
+                font-family: yekanBakh;
+                src: url(./assets/fonts/Vazirmatn-Bold.ttf);
+            }
+    
+            .header {
+                background-color: #fff;
+                padding: 2px;
+            }
+    
+            .container {
+                display: flex;
+                justify-content: center;
+                margin: 18px 0 100px;
+                width:100%;
+                font-family: yekanBakh;
+            }
+    
+            .card {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: #fff;
+                border: 1px solid #e5e5e5;
+                border-radius: 20px;
+                box-shadow:rgb(0 0 0 / 10%) 0px 2px 3px;
+                padding: 16px 24px;
+                width: 55%;
+                min-height: 500px;
+                box-sizing: border-box;
+            }
+    
+            .box {
+                width: 100%;
+                height: 100%;
+            }
+    
+            .box span {
+                font-size: 34px;
+                display: flex;
+                justify-content: center;
+            }
+    
+            .main-items {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 30px;
+                width: 100%;
+                height: 80%;
+            }
+    
+            .main-items-number {
+                text-align: center;
+                margin: auto;
+                min-width: 265px;
+            }
+    
+            .divider {
+                height: 70%;
+                margin: 0 6px;
+                background-color: #f1f1f1;
+                width: 4px;
+                border-radius: 12px;
+            }
+    
+            .number {
+                font-size: 112px;
+                text-align: center;
+                width: 100%;
+    
+            }
+    
+            .text {
+                font-size: 30px;
+                font-weight: 700;
+                margin: 8px 0;
+            }
+    
+            .logo {
+                display: block;
+                margin: 8px auto;
+                width: 120px;
+            }
+    
+            .logo-company {
+                display: flex;
+                justify-content: center;
+            }
+    
+            .logo-company-img {
+                background-image: url('images/companies-white.jpg');
+                width: 100%;
+                height: 327px;
+                animation: movie-companies 40s linear infinite;
+                transform: translateZ(0);
+                background-size: 100%;
+                box-shadow:rgb(0 0 0 / 10%) 0px 2px 3px;
+    
+            }
+    
+            @keyframes movie-companies {
+                from {
+                    background-position: 0 0;
+                }
+                to {
+                    background-position: -1920px 0;
+                }
+            }
+            .fit {
+                display: flex;
+                column-gap: 20px;
+                margin-bottom: 22px;
+                justify-content: space-between;
+            }
+            .button {
+                background-color: #4cacaf; /* Green */
+                border: none;
+                color: rgb(255, 255, 255);
+                padding: 10px 6px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: auto 2px;
+                transition-duration: 0.4s;
+                cursor: pointer;
+                border-radius: 14px;
+                }
+                .button1 {
+                    background-color: rgb(255, 255, 255);; 
+                    color: rgb(0, 0, 0); 
+                    border: 2px solid #000000;
+                }
+
+                .button1:hover {
+                background-color: #4c74af;
+                color: white;
+                }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <img class="logo" src="./assets//icons/logo_dark.svg">
+        </div>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div class="container">
+            <div class="card">
+                <div class="box">
+                    <div class="main-items">
+                               
+                            <div class="row">
+                                <div class="fit">
+                                    <button type="button" id="btn_copy_nationalCode" class="button button1">copy</button>
+                                    <span style="color:crimson; font-size: 30px;" id="generatedNationalCode"></span>
+                                    <span>کد ملی</span>
+                                    <img width="30px" height="30px" src="./assets/icons/badge.png"/>
+                                </div>
+                                <hr>
+                                <div class="fit">
+                                    <button type="button" id="btn_copy_name" class="button button1">copy</button>
+                                    <span id="name"></span>
+                                    <span>نام</span>
+                                    <img width="30px" height="30px" src="./assets/icons/profile.png"/>
+                                </div>
+                                <hr>
+                                <div class="fit">
+                                    <button type="button" id="btn_copy_phone" class="button button1">copy</button>
+                                    <span id="phone"></span>
+                                    <span>تلفن</span>
+                                    <img width="30px" height="30px" src="./assets/icons/phone.png"/>
+                                </div>
+                                <hr>
+                                <div class="fit">
+                                    <button type="button" id="btn_copy_mobile" class="button button1">copy</button>
+                                    <span id="mobile"></span>
+                                    <span>موبایل</span>
+                                    <img width="30px" height="30px" src="./assets/icons/mobile.png"/>
+                                </div>
+                                <hr>
+                                <div class="fit">
+                                    <button type="button" id="btn_copy_email" class="button button1">copy</button>
+                                    <span id="email"></span>
+                                    <span>ایمیل</span>
+                                    <img width="30px" height="30px" src="./assets/icons/email-sign.png"/>
+                                </div>
+                                <hr>
+                                <div class="fit">
+                                    <button type="button" id="btn_copy_ip" class="button button1">copy</button>
+                                    <span id="ip"></span>
+                                    <span>آی پی</span>
+                                    <img width="30px" height="30px" src="./assets/icons/ip.png"/>
+                                </div>
+                            </div>
+                            <!-- <div class="row">
+                                <button  type="button" id="btn_code_meli_round">کد ملی رند</button>
+                                <p id="message">صحت کد ملی</p>
+                                <div class="col-md-3">
+                                    <input type="text" name="code_melli" class="form-control input-sm" id="code_melli" placeholder="کد ملی مورد نظر" />
+                                </div>
+                                
+                                <button  type="button" id="btn_code_melli">بررسی</button>
+
+                            </div> -->
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+        <script src="./lib/jquery.min.js"></script>
+        
+        <script src="./lib/chance.min.js"></script>
+        <script>
+            console.log(chance.bool());
+            console.log(chance.age());
+            console.log(chance.email({domain:'gmail.com'}));
+            console.log(chance.avatar({fileExtension: 'jpg'}));
+            
+        
+        </script>
+        <script type="text/javascript">
+            $(function () {
+                console.log('Hi');
+              
+                $("#message").hide();
+                $("#btn_code_melli").click(function () {
+                    $("#message").hide();
+                    $("#message").empty();
+                    if ($("#code_melli").val() == '' || $("#code_melli").val() == null) {
+                        $("#message").show();
+                        $("#message").removeClass("alert-success");
+                        $("#message").addClass("alert-warning");
+                        $("#message").append("کد ملی را وارد نمایید است");
+                        return;
+                    }
+                    var allDigitEqual = ["0000000000", "1111111111", "2222222222", "3333333333", "4444444444", "5555555555", "6666666666", "7777777777", "8888888888", "9999999999"];
+                    codeMelliPattern = /^([0-9]{10})+$/;
+                    if (allDigitEqual.indexOf($("#code_melli").val()) != -1 || !codeMelliPattern.test($("#code_melli").val())) {
+                        $("#message").show();
+                        $("#message").removeClass("alert-success");
+                        $("#message").addClass("alert-warning");
+                        $("#message").append("کد ملی نادرست است");
+                        return;
+                    }
+                    var chArray = Array.from($("#code_melli").val());
+                    var num0 = parseInt(chArray[0]) * 10;
+                    var num2 = parseInt(chArray[1]) * 9;
+                    var num3 = parseInt(chArray[2]) * 8;
+                    var num4 = parseInt(chArray[3]) * 7;
+                    var num5 = parseInt(chArray[4]) * 6;
+                    var num6 = parseInt(chArray[5]) * 5;
+                    var num7 = parseInt(chArray[6]) * 4;
+                    var num8 = parseInt(chArray[7]) * 3;
+                    var num9 = parseInt(chArray[8]) * 2;
+                    var a = parseInt(chArray[9]);
+        
+                    var b = (((((((num0 + num2) + num3) + num4) + num5) + num6) + num7) + num8) + num9;
+                    var c = b % 11;
+        
+                    var res = (((c < 2) && (a == c)) || ((c >= 2) && ((11 - c) == a)));
+                    if (res == true) {
+                        $("#message").show();
+                        $("#message").removeClass("alert-warning");
+                        $("#message").addClass("alert-success");
+                        $("#message").append("کد ملی صحیح است");
+                        return;
+                    }
+                    else {
+                        $("#message").show();
+                        $("#message").removeClass("alert-success");
+                        $("#message").addClass("alert-warning");
+                        $("#message").append("کد ملی نادرست است");
+                        return;
+                    }
+                });
+            });
+
+            function checkNationalCode(nationalCode) {
+                var allDigitEqual = ["0000000000", "1111111111", "2222222222", "3333333333", "4444444444", "5555555555", "6666666666", "7777777777", "8888888888", "9999999999"];
+                        codeMelliPattern = /^([0-9]{10})+$/;
+                        if (allDigitEqual.indexOf(nationalCode) != -1 || !codeMelliPattern.test(nationalCode)) {
+                            return false;
+                        }
+                        var chArray = Array.from(nationalCode);
+                        var num0 = parseInt(chArray[0]) * 10;
+                        var num2 = parseInt(chArray[1]) * 9;
+                        var num3 = parseInt(chArray[2]) * 8;
+                        var num4 = parseInt(chArray[3]) * 7;
+                        var num5 = parseInt(chArray[4]) * 6;
+                        var num6 = parseInt(chArray[5]) * 5;
+                        var num7 = parseInt(chArray[6]) * 4;
+                        var num8 = parseInt(chArray[7]) * 3;
+                        var num9 = parseInt(chArray[8]) * 2;
+                        var a = parseInt(chArray[9]);
+            
+                        var b = (((((((num0 + num2) + num3) + num4) + num5) + num6) + num7) + num8) + num9;
+                        var c = b % 11;
+            
+                        var res = (((c < 2) && (a == c)) || ((c >= 2) && ((11 - c) == a)));
+                        if (res == true) {
+                            return true;
+                        }
+                        else {
+                            return false;
+                        }
+            }
+
+            $(
+                function() {
+                    console.log('generating data...');
+                    var nationalCode;
+                    while(true){
+                        nationalCode = '00'+Math.floor((Math.random() * 9999999) + 10000000);
+                        if(checkNationalCode(nationalCode)){
+                            console.log(nationalCode);
+                            break;
+                        }
+                    }
+                    $("#generatedNationalCode").show();
+                    $("#generatedNationalCode").append(nationalCode);
+                     twoDigit = Math.floor((Math.random() * 9) + 1);
+                     phone = '021'+twoDigit+twoDigit+Math.floor((Math.random() * 999) + 100000);
+                    $('#phone').show();
+                    $('#phone').append(phone);
+                    $('#mobile').show();
+                    preMobileNumber = ['0912','0901','0939','0937','0936','0921','0922','0909','0910','0911','0912'];
+                    $('#mobile').append(preMobileNumber[Math.floor((Math.random() * 9) + 1)]+Math.floor((Math.random() * 999) + 1000000));
+                    var uri = "https://raw.githubusercontent.com/hamedpa/persian-gender-detection/master/finalDB.csv";
+                    $.get(uri, function(data){
+                        csvRows = data.split("\n")[twoDigit+twoDigit+Math.floor((Math.random() * 999) + 20000)];
+                        firstName = csvRows.split(',')[0];
+                        gender = csvRows.split(',')[1];
+                        console.log(firstName);
+                        $('#name').show();
+                        $('#name').append(firstName);
+                    });
+                    $('#email').show();
+                    emailChoose = chance.bool();
+                    var email;
+                    if(emailChoose){
+                        email = chance.email({domain:'gmail.com'});
+                    }
+                    else{
+                        email = chance.email();
+                    }
+                    $('#email').append(email);
+                    $('#ip').show();
+                    $('#ip').append(chance.ip());
+                }
+            )
+            $("#btn_code_meli_round").click(function () {
+                while(true){
+                        nationalCode = '000'+Math.floor((Math.random() * 99) + 10)+'00'+Math.floor((Math.random() * 9) + 1)+'00';
+                        // console.log(nationalCode);
+                        // break
+                        if(checkNationalCode(nationalCode)){
+                            console.log(nationalCode);
+                            break;
+                        }
+                    }
+                    $("#generatedNationalCode").show();
+                    $("#generatedNationalCode").empty();
+                    $("#generatedNationalCode").append(nationalCode);
+                    
+            });
+            function copyToClipboard(element) {
+                var $temp = $("<input>");
+                $("body").append($temp);
+                $temp.val($(element).text()).select();
+                document.execCommand("copy");
+                $temp.remove();
+            }
+            $("#btn_copy_nationalCode").click(function () {
+                copyToClipboard($("#generatedNationalCode"));
+               
+            });
+            $("#btn_copy_name").click(function () {
+                copyToClipboard($("#name"));
+            });
+            $("#btn_copy_phone").click(function () {
+                copyToClipboard($("#phone"));
+            });
+            $("#btn_copy_mobile").click(function () {
+                copyToClipboard($("#mobile"));
+            });
+            $("#btn_copy_email").click(function () {
+                copyToClipboard($("#email"));
+            });
+            $("#btn_copy_ip").click(function () {
+                copyToClipboard($("#ip"));
+            });
+        </script>
+    </body>
+</html>
