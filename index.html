@@ -231,6 +231,13 @@
                         </div>
                         <hr>
                         <div class="fit">
+                            <button type="button" id="btn_copy_address" class="button button1">copy</button>
+                            <span style="font-size: medium; margin:12px; direction: rtl;" id="address"></span>
+                            <span>آدرس</span>
+                            <img width="30px" height="30px" src="./assets/icons/address.png" />
+                        </div>
+                        <hr>
+                        <div class="fit">
                             <button type="button" id="btn_copy_ip" class="button button1">copy</button>
                             <span id="ip"></span>
                             <span>آی پی</span>
@@ -371,6 +378,33 @@
             }
             return postalCode;
         }
+        function generateAddress() {
+            var uri = "https://raw.githubusercontent.com/hamedpa/persian-dev-tool/master/data/address.csv";
+                $.get(uri, function (data) {
+                    csvRows = data.split("\n")[chance.integer({ min: 1, max: 103275 })];
+                    let alley = data.split("\n")[chance.integer({ min: 1, max: 103275 })].split(',')[7].split(' ');
+                    if(alley.length>1){
+                        alley = alley[1];
+                    }
+                    else{
+                        alley = alley[0];
+                    }
+                    const prefixAddress = ['استان','شهر','محله','خیابان','کوچه','پلاک','طبقه','واحد']
+                    const address = ({
+                        province: chance.bool() ? prefixAddress[0]+' '+csvRows.split(',')[1] : csvRows.split(',')[1],
+                        city: chance.bool() ? prefixAddress[1]+' '+csvRows.split(',')[3] : csvRows.split(',')[3],
+                        origin: chance.bool() ? chance.bool() ? prefixAddress[2]+' '+csvRows.split(',')[7] : prefixAddress[3]+' '+csvRows.split(',')[7] : csvRows.split(',')[7],
+                        alley: chance.bool() ? prefixAddress[4]+' '+alley : alley,
+                        plaque: chance.bool() ? prefixAddress[5]+' '+chance.integer({ min: 1, max: 50 }) : chance.integer({ min: 1, max: 50 }),
+                        floor: chance.bool() ? prefixAddress[6]+' '+chance.integer({ min: 1, max: 6 }) : chance.integer({ min: 1, max: 6 }),
+                        part: chance.bool() ? prefixAddress[7]+' '+chance.integer({ min: 1, max: 20 }) : chance.integer({ min: 1, max: 20 }),
+                    });
+                    const seprator = [',','_',' ','‌','،',' , ',' _','-',' - ','- ',' -',' ، '];
+                    var result = Object.values(address).join(seprator[chance.integer({ min: 0, max: 13 })]);
+                    return result;
+                   
+                });
+        }
         $(
             function () {
                 console.log('generating data...');
@@ -419,6 +453,35 @@
                 
                 $('#postalCode').show();
                 $('#postalCode').append(generatePostalCode());
+
+
+                var uri = "https://raw.githubusercontent.com/hamedpa/persian-dev-tool/master/data/address.csv";
+                $.get(uri, function (data) {
+                    csvRows = data.split("\n")[chance.integer({ min: 1, max: 103275 })];
+                    let alley = data.split("\n")[chance.integer({ min: 1, max: 103275 })].split(',')[7].split(' ');
+                    if(alley.length>1){
+                        alley = alley[1];
+                    }
+                    else{
+                        alley = alley[0];
+                    }
+                    const prefixAddress = ['استان','شهر','محله','خیابان','کوچه','پلاک','طبقه','واحد']
+                    const address = ({
+                        province: chance.bool() ? prefixAddress[0]+' '+csvRows.split(',')[1] : csvRows.split(',')[1],
+                        city: chance.bool() ? prefixAddress[1]+' '+csvRows.split(',')[3] : csvRows.split(',')[3],
+                        origin: chance.bool() ? chance.bool() ? prefixAddress[2]+' '+csvRows.split(',')[7] : prefixAddress[3]+' '+csvRows.split(',')[7] : csvRows.split(',')[7],
+                        alley: chance.bool() ? prefixAddress[4]+' '+alley : alley,
+                        plaque: chance.bool() ? prefixAddress[5]+' '+chance.integer({ min: 1, max: 50 }) : chance.integer({ min: 1, max: 50 }),
+                        floor: chance.bool() ? prefixAddress[6]+' '+chance.integer({ min: 1, max: 6 }) : chance.integer({ min: 1, max: 6 }),
+                        part: chance.bool() ? prefixAddress[7]+' '+chance.integer({ min: 1, max: 20 }) : chance.integer({ min: 1, max: 20 }),
+                    });
+                    const seprator = [',','_',' ','‌','،',' , ',' _','-',' - ','- ',' -',' ، '];
+                    var result = Object.values(address).join(seprator[chance.integer({ min: 0, max: 13 })]);
+                    $('#address').show();
+                    $('#address').append(result);
+                });
+                
+                
             }
         )
         $("#btn_code_meli_round").click(function () {
@@ -472,6 +535,10 @@
         $("#btn_copy_postalCode,#postalCode").click(function () {
             copyToClipboard($("#postalCode"));
             notification("کد پستی");
+        });
+        $("#btn_copy_address,#address").click(function () {
+            copyToClipboard($("#address"));
+            notification("آدرس");
         });
         function notification(field) {
             toastr.info(`${field} با موفقیت در کلیپ بورد شما کپی شد`)
