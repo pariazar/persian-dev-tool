@@ -424,31 +424,31 @@
         }
         $("#btn_copy_nationalCode,#generatedNationalCode").click(function () {
             copyToClipboard($("#generatedNationalCode"));
-            notification();
+            notification("کد ملی");
         });
         $("#btn_copy_name,#name").click(function () {
             copyToClipboard($("#name"));
-            notification();
+            notification("نام");
         });
         $("#btn_copy_phone,#phone").click(function () {
             copyToClipboard($("#phone"));
-            notification();
+            notification("تلفن");
         });
         $("#btn_copy_mobile,#mobile").click(function () {
             copyToClipboard($("#mobile"));
-            notification();
+            notification("موبایل");
         });
         $("#btn_copy_email,#email").click(function () {
             copyToClipboard($("#email"));
-            notification();
+            notification("ایمیل");
         });
         $("#btn_copy_ip,#ip").click(function () {
             copyToClipboard($("#ip"));
-            notification();
+            notification("آی پی");
         });
 
-        function notification() {
-            toastr.info('با موفقیت در کلیپ بورد شما کپی شد')
+        function notification(field) {
+            toastr.info(`${field} با موفقیت در کلیپ بورد شما کپی شد`)
         }
     </script>
 </body>
