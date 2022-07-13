@@ -139,7 +139,7 @@
         }
 
         .td-field {
-            width: 60px !important;
+            width: 70px !important;
         }
 
         .td-copy-button {
@@ -206,6 +206,14 @@
                         </button></td>
                     <td style="color:crimson; font-size: 30px;" id="generatedNationalCode"></td>
                     <td class="td-field">کد ملی </td>
+                    <td class="td-icon"><img src="./assets/icons/badge.png" /></td>
+                </tr>
+                <tr>
+                    <td class="td-copy-button"><button type="button" id="btn_copy_round_nationalCode" class="button button1">
+                            copy
+                        </button></td>
+                    <td style="color:crimson; font-size: 30px;" id="generatedRoundNationalCode"></td>
+                    <td class="td-field">کد ملی رند </td>
                     <td class="td-icon"><img src="./assets/icons/badge.png" /></td>
                 </tr>
                 <tr>
@@ -480,7 +488,7 @@
         }
         $(function () {
             console.log("generating data...");
-            var nationalCode;
+            var nationalCode, roundNationalCode;
             while (true) {
                 nationalCode = "00" + Math.floor(Math.random() * 9999999 + 10000000);
                 if (checkNationalCode(nationalCode)) {
@@ -490,6 +498,17 @@
             }
             $("#generatedNationalCode").show();
             $("#generatedNationalCode").append(nationalCode);
+            while (true) {
+                var randNum = Math.floor(Math.random() * (101));
+                var reverseNum = parseInt(randNum.toString().split("").reverse().join(""));
+                roundNationalCode = "000" + randNum + reverseNum + "000";
+                if(checkNationalCode(roundNationalCode)){
+                    console.log(roundNationalCode);
+                    break;
+                }
+            };
+            $("#generatedRoundNationalCode").show();
+            $("#generatedRoundNationalCode").append(roundNationalCode);
             twoDigit = Math.floor(Math.random() * 9 + 1);
             phone =
                 "021" +
@@ -643,6 +662,10 @@
         $("#btn_copy_nationalCode,#generatedNationalCode").click(function () {
             copyToClipboard($("#generatedNationalCode"));
             notification("کد ملی");
+        });
+        $("#btn_copy_round_nationalCode,#generatedRoundNationalCode").click(function () {
+            copyToClipboard($("#generatedRoundNationalCode"));
+            notification("کد ملی رند");
         });
         $("#btn_copy_name,#name").click(function () {
             copyToClipboard($("#name"));
