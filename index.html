@@ -198,6 +198,13 @@
         <!--[if lt IE 7]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+            <p>انتخاب پیش شماره موبایل</p>
+            <label for="select_mobile_number">Choose a mobile number:</label>
+
+<select name="select_mobile_number" id="select_mobile_number">
+  <option value="0912">0912</option>
+  <option value="0911">0911</option>
+</select>
         <table class="bordered">
             <tbody>
                 <tr>
@@ -630,6 +637,13 @@
                 );
                 $("#address").show();
                 $("#address").append(result);
+                $("#select_mobile_number").change(function () {
+                    var mobileValue = $('#select_mobile_number option:selected').val();
+                        $("#mobile").text(
+                            mobileValue +
+                    chance.integer({ min: 0, max: 10000000 })
+                );
+                });
             });
         });
         $("#btn_code_meli_round").click(function () {
