@@ -66,6 +66,9 @@
       </div>
     </div>
 
+
+    
+
     <div class="d-flex justify-content-center mt-5">
       <div class="col-2">
         <div class="form-floating mb-3">
@@ -606,6 +609,12 @@
             var mobileValue = $("#select_mobile_number option:selected").val();
             $("#mobile").text(
               mobileValue + chance.integer({ min: 0, max: 10000000 })
+            );
+          });
+          $("#select_email").change(function () {
+            var emailValue = $("#select_email option:selected").val();
+            $("#email").text(
+                 chance.email({domain: emailValue})
             );
           });
         });
