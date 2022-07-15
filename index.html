@@ -7,31 +7,10 @@
     <title>dev tool | created for iran</title>
     <meta name="description" content="تولید کد ملی رایگان" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="./assets/styles/style.css">
     <link href="./assets/styles/bootstrap.min.css" rel="stylesheet" />
-    <style>
-      body {
-        background-color: #e5e5e5;
-      }
-      .logo {
-        display: block;
-        margin: 8px auto;
-        width: 120px;
-      }
-      .th-icon {
-        width: 20px !important;
-        padding-right: 25px;
-      }
 
-      .th-icon img {
-        width: 30px;
-        height: 30px;
-      }
-
-      .td-copy-button {
-        width: 20px !important;
-        padding: 0 0 0 25px;
-      }
-    </style>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-light primary-color">
@@ -100,6 +79,18 @@
           </button>
           <button
             class="nav-link"
+            id="nav-email-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#nav-email"
+            type="button"
+            role="tab"
+            aria-controls="nav-email"
+            aria-selected="false"
+          >
+            ایمیل
+          </button>
+          <button
+            class="nav-link"
             id="nav-profile-tab"
             data-bs-toggle="tab"
             data-bs-target="#nav-profile"
@@ -141,6 +132,20 @@
           >
             <option selected>شماره همراه دلخواه خود را انتخاب کنید</option>
           </select>
+        </div>
+        <div
+          class="tab-email fade"
+          id="nav-email"
+          role="tabpanel"
+          aria-labelledby="nav-email-tab"
+        >
+        <select
+            class="form-select form-select-sm mb-3"
+            aria-label=".form-select-sm example"
+            id="select_email"
+        >
+            <option selected>دامنه ایمیل دلخواه خود را انتخاب کنید</option>
+        </select>
         </div>
         <div
           class="tab-pane fade"
@@ -569,6 +574,33 @@
           preMobileNumber[Math.floor(Math.random() * 9 + 1)] +
             chance.integer({ min: 0, max: 10000000 })
         );
+        emailDomains = [
+          {
+              name: 'Gmail',
+              domain: 'gmail.com'
+          },
+          {
+              name: 'Yahoo',
+              domain: 'yahoo.com'
+          },
+          {
+              name: 'Hotmail',
+              domain: 'hotmail.com'
+          },
+          {
+              name: 'Mail',
+              domain: 'mail.com'
+          }
+        ];
+        $.each(emailDomains, function (key, value) {
+          $("#select_email").append(
+            $("<option></option>").attr("value", value.domain).text(value.name)
+          );
+        });
+        $("#mobile").append(
+          preMobileNumber[Math.floor(Math.random() * 9 + 1)] +
+            chance.integer({ min: 0, max: 10000000 })
+        );
         var uri =
           "https://raw.githubusercontent.com/hamedpa/persian-gender-detection/master/finalDB.csv";
         $.get(uri, function (data) {
@@ -668,6 +700,12 @@
             var mobileValue = $("#select_mobile_number option:selected").val();
             $("#mobile").text(
               mobileValue + chance.integer({ min: 0, max: 10000000 })
+            );
+          });
+          $("#select_email").change(function () {
+            var emailValue = $("#select_email option:selected").val();
+            $("#email").text(
+                 chance.email({domain: emailValue})
             );
           });
         });

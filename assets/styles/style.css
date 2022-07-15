@@ -1,0 +1,22 @@
+body {
+  background-color: #e5e5e5;
+}
+.logo {
+  display: block;
+  margin: 8px auto;
+  width: 120px;
+}
+.th-icon {
+  width: 20px !important;
+  padding-right: 25px;
+}
+
+.th-icon img {
+  width: 30px;
+  height: 30px;
+}
+
+.td-copy-button {
+  width: 20px !important;
+  padding: 0 0 0 25px;
+}
