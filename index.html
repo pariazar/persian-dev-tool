@@ -140,9 +140,6 @@
             id="select_mobile_number"
           >
             <option selected>شماره همراه دلخواه خود را انتخاب کنید</option>
-            <option value="0911">0911</option>
-            <option value="0912">0912</option>
-            <option value="0913">0913</option>
           </select>
         </div>
         <div
@@ -552,18 +549,22 @@
         $("#phone").append(phone);
         $("#mobile").show();
         preMobileNumber = [
-          "0912",
           "0901",
-          "0939",
-          "0937",
-          "0936",
-          "0921",
-          "0922",
           "0909",
           "0910",
           "0911",
           "0912",
+          "0921",
+          "0922",
+          "0939",
+          "0937",
+          "0936",
         ];
+        $.each(preMobileNumber, function (key, value) {
+          $("#select_mobile_number").append(
+            $("<option></option>").attr("value", value).text(value)
+          );
+        });
         $("#mobile").append(
           preMobileNumber[Math.floor(Math.random() * 9 + 1)] +
             chance.integer({ min: 0, max: 10000000 })
