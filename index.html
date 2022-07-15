@@ -7,8 +7,6 @@
     <title>dev tool | created for iran</title>
     <meta name="description" content="تولید کد ملی رایگان" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="" />
-    <link href="./assets/styles/toastr.min.css" rel="stylesheet" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -79,6 +77,27 @@
       </div>
     </nav>
 
+    <div class="toast-container position-fixed top-0 end-0 p-3">
+      <div
+        id="basicToast"
+        class="toast"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+      >
+        <div class="toast-header bg-info">
+          <img src="./assets/icons/info-circle.svg" />
+          <button
+            type="button"
+            class="btn-close me-auto"
+            data-bs-dismiss="toast"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="toast-body" id="toastBody"></div>
+      </div>
+    </div>
+
     <div class="d-flex justify-content-center mt-5">
       <div class="table-responsive col-6">
         <table class="table">
@@ -87,9 +106,9 @@
               <th class="th-icon" scope="row">
                 <img src="./assets/icons/badge.png" />
               </th>
-              <td>کد ملی</td>
+              <td class="fw-bold">کد ملی</td>
               <td
-                class="text-danger fw-bolder fs-3"
+                class="text-danger fw-bolder fs-4"
                 id="generatedNationalCode"
               ></td>
               <td class="td-copy-button">
@@ -106,9 +125,9 @@
               <th class="th-icon" scope="row">
                 <img src="./assets/icons/badge.png" />
               </th>
-              <td>کد ملی رند</td>
+              <td class="fw-bold">کد ملی رند</td>
               <td
-                class="text-danger fw-bolder fs-3"
+                class="text-danger fw-bolder fs-4"
                 id="generatedRoundNationalCode"
               ></td>
               <td class="td-copy-button">
@@ -125,7 +144,7 @@
               <th class="th-icon" scope="row">
                 <img src="./assets/icons/profile.png" />
               </th>
-              <td>نام</td>
+              <td class="fw-bold">نام</td>
               <td id="name"></td>
               <td class="td-copy-button">
                 <button type="button" class="btn btn-light" id="btn_copy_name">
@@ -137,7 +156,7 @@
               <th class="th-icon" scope="row">
                 <img src="./assets/icons/phone.png" />
               </th>
-              <td>تلفن</td>
+              <td class="fw-bold">تلفن</td>
               <td id="phone"></td>
               <td class="td-copy-button">
                 <button type="button" class="btn btn-light" id="btn_copy_phone">
@@ -149,7 +168,7 @@
               <th class="th-icon" scope="row">
                 <img src="./assets/icons/mobile.png" />
               </th>
-              <td>موبایل</td>
+              <td class="fw-bold">موبایل</td>
               <td id="mobile"></td>
               <td class="td-copy-button">
                 <button
@@ -165,7 +184,7 @@
               <th class="th-icon" scope="row">
                 <img src="./assets/icons/email-sign.png" />
               </th>
-              <td>ایمیل</td>
+              <td class="fw-bold">ایمیل</td>
               <td id="email"></td>
               <td class="td-copy-button">
                 <button type="button" class="btn btn-light" id="btn_copy_email">
@@ -177,7 +196,7 @@
               <th class="th-icon" scope="row">
                 <img src="./assets/icons/postcode.png" />
               </th>
-              <td>کد پستی</td>
+              <td class="fw-bold">کد پستی</td>
               <td id="postalCode"></td>
               <td class="td-copy-button">
                 <button
@@ -193,7 +212,7 @@
               <th class="th-icon" scope="row">
                 <img src="./assets/icons/address.png" />
               </th>
-              <td>آدرس</td>
+              <td class="fw-bold">آدرس</td>
               <td id="address"></td>
               <td class="td-copy-button">
                 <button
@@ -209,7 +228,7 @@
               <th class="th-icon" scope="row">
                 <img src="./assets/icons/ip.png" />
               </th>
-              <td>آی پی</td>
+              <td class="fw-bold">آی پی</td>
               <td id="ip"></td>
               <td class="td-copy-button">
                 <button type="button" class="btn btn-light" id="btn_copy_ip">
@@ -230,7 +249,6 @@
     <script src="./lib/jquery.min.js"></script>
 
     <script src="./lib/chance.min.js"></script>
-    <script src="./lib/toastr.min.js"></script>
     <script>
       console.log(chance.bool());
       console.log(chance.age());
@@ -618,6 +636,8 @@
         document.execCommand("copy");
         $temp.remove();
       }
+    </script>
+    <script>
       $("#btn_copy_nationalCode,#generatedNationalCode").click(function () {
         copyToClipboard($("#generatedNationalCode"));
         notification("کد ملی");
@@ -656,8 +676,10 @@
         copyToClipboard($("#address"));
         notification("آدرس");
       });
+
       function notification(field) {
-        toastr.info(`${field} با موفقیت در کلیپ بورد شما کپی شد`);
+        $("#toastBody").text(`${field} با موفقیت در کلیپ بورد شما کپی شد`);
+        new bootstrap.Toast(document.querySelector("#basicToast")).show();
       }
     </script>
   </body>
