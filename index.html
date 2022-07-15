@@ -7,12 +7,7 @@
     <title>dev tool | created for iran</title>
     <meta name="description" content="تولید کد ملی رایگان" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    />
+    <link href="./assets/styles/bootstrap.min.css" rel="stylesheet" />
     <style>
       body {
         background-color: #e5e5e5;
@@ -89,21 +84,82 @@
     </div>
 
     <div class="d-flex justify-content-center mt-5">
-      <div class="col-2">
-        <div class="form-floating mb-3">
-          <select
-            class="form-select"
-            id="select_mobile_number"
-            aria-label="mobile_number"
+      <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+          <button
+            class="nav-link active"
+            id="nav-home-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#nav-home"
+            type="button"
+            role="tab"
+            aria-controls="nav-home"
+            aria-selected="true"
           >
-            <option selected>انتخاب کنید</option>
+            شماره همراه
+          </button>
+          <button
+            class="nav-link"
+            id="nav-profile-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#nav-profile"
+            type="button"
+            role="tab"
+            aria-controls="nav-profile"
+            aria-selected="false"
+          >
+            Profile
+          </button>
+          <button
+            class="nav-link"
+            id="nav-contact-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#nav-contact"
+            type="button"
+            role="tab"
+            aria-controls="nav-contact"
+            aria-selected="false"
+          >
+            Contact
+          </button>
+        </div>
+      </nav>
+    </div>
+
+    <div class="d-flex justify-content-center mt-3">
+      <div class="tab-content" id="nav-tabContent">
+        <div
+          class="tab-pane fade show active"
+          id="nav-home"
+          role="tabpanel"
+          aria-labelledby="nav-home-tab"
+        >
+          <select
+            class="form-select form-select-sm mb-3"
+            aria-label=".form-select-sm example"
+            id="select_mobile_number"
+          >
+            <option selected>شماره همراه دلخواه خود را انتخاب کنید</option>
             <option value="0911">0911</option>
             <option value="0912">0912</option>
             <option value="0913">0913</option>
           </select>
-          <label class="me-auto" for="floatingSelect"
-            >پیش شماره همراه دلخواه</label
-          >
+        </div>
+        <div
+          class="tab-pane fade"
+          id="nav-profile"
+          role="tabpanel"
+          aria-labelledby="nav-profile-tab"
+        >
+          ...
+        </div>
+        <div
+          class="tab-pane fade"
+          id="nav-contact"
+          role="tabpanel"
+          aria-labelledby="nav-contact-tab"
+        >
+          ...
         </div>
       </div>
     </div>
@@ -251,11 +307,7 @@
       </div>
     </div>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-      crossorigin="anonymous"
-    ></script>
+    <script src="./assets/scripts/bootstrap.bundle.min.js"></script>
     <script src="./lib/jquery.min.js"></script>
 
     <script src="./lib/chance.min.js"></script>
