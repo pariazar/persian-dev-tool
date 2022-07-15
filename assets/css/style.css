@@ -1,148 +1,22 @@
-.rtl {
-    direction: rtl;
-}
-html,body{
-    padding:0;
-    margin:0;
+body {
     background-color: #e5e5e5;
-}
-
-@font-face {
-    font-family: yekanBakh;
-    src: url(./assets/fonts/Vazirmatn-Bold.ttf);
-}
-
-.header {
-    background-color: #fff;
-    padding: 2px;
-}
-
-.container {
-    display: flex;
-    justify-content: center;
-    margin: 18px 0 100px;
-    width:100%;
-    font-family: yekanBakh;
-}
-
-.card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #fff;
-    border: 1px solid #e5e5e5;
-    border-radius: 20px;
-    box-shadow:rgb(0 0 0 / 10%) 0px 2px 3px;
-    padding: 16px 24px;
-    width: 55%;
-    min-height: 500px;
-    box-sizing: border-box;
-}
-
-.box {
-    width: 100%;
-    height: 100%;
-}
-
-.box span {
-    font-size: 34px;
-    display: flex;
-    justify-content: center;
-}
-
-.main-items {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 30px;
-    width: 100%;
-    height: 80%;
-}
-
-.main-items-number {
-    text-align: center;
-    margin: auto;
-    min-width: 265px;
-}
-
-.divider {
-    height: 70%;
-    margin: 0 6px;
-    background-color: #f1f1f1;
-    width: 4px;
-    border-radius: 12px;
-}
-
-.number {
-    font-size: 112px;
-    text-align: center;
-    width: 100%;
-
-}
-
-.text {
-    font-size: 30px;
-    font-weight: 700;
-    margin: 8px 0;
-}
-
-.logo {
+  }
+  .logo {
     display: block;
     margin: 8px auto;
     width: 120px;
-}
+  }
+  .th-icon {
+    width: 20px !important;
+    padding-right: 25px;
+  }
 
-.logo-company {
-    display: flex;
-    justify-content: center;
-}
+  .th-icon img {
+    width: 30px;
+    height: 30px;
+  }
 
-.logo-company-img {
-    background-image: url('images/companies-white.jpg');
-    width: 100%;
-    height: 327px;
-    animation: movie-companies 40s linear infinite;
-    transform: translateZ(0);
-    background-size: 100%;
-    box-shadow:rgb(0 0 0 / 10%) 0px 2px 3px;
-
-}
-
-@keyframes movie-companies {
-    from {
-        background-position: 0 0;
-    }
-    to {
-        background-position: -1920px 0;
-    }
-}
-.fit {
-    display: flex;
-    column-gap: 20px;
-    margin-bottom: 22px;
-    justify-content: space-between;
-}
-.button {
-    background-color: #4cacaf; /* Green */
-    border: none;
-    color: rgb(255, 255, 255);
-    padding: 10px 6px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: auto 2px;
-    transition-duration: 0.4s;
-    cursor: pointer;
-    border-radius: 14px;
-    }
-    .button1 {
-        background-color: rgb(255, 255, 255);; 
-        color: rgb(0, 0, 0); 
-        border: 2px solid #000000;
-    }
-
-    .button1:hover {
-    background-color: #4c74af;
-    color: white;
-    }
+  .td-copy-button {
+    width: 20px !important;
+    padding: 0 0 0 25px;
+  }

@@ -1,271 +1,687 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>dev tool | created for iran</title>
-        <meta name="description" content="تولید کد ملی رایگان">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="./assets/css/style.css ">
-    </head>
-    <body>
-        <div class="header">
-            <img class="logo" src="./assets//icons/logo_dark.svg">
+<html lang="en" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dev tool | created for iran</title>
+    <meta name="description" content="تولید کد ملی رایگان" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css ">
+    
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-light primary-color">
+      <div class="container">
+        <!-- Collapse button -->
+        <button
+          class="navbar-toggler float-right"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Collapsible content -->
+        <div
+          class="collapse navbar-collapse justify-content-center"
+          id="navbarSupportedContent"
+        >
+          <a href="/persian-dev-tool"
+            ><img class="logo" src="./assets//icons/logo_dark.svg"
+          /></a>
         </div>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        <div class="container">
-            <div class="card">
-                <div class="box">
-                    <div class="main-items">
-                               
-                            <div class="row">
-                                <div class="fit">
-                                    <button type="button" id="btn_copy_nationalCode" class="button button1">copy</button>
-                                    <span style="color:crimson; font-size: 30px;" id="generatedNationalCode"></span>
-                                    <span>کد ملی</span>
-                                    <img width="30px" height="30px" src="./assets/icons/badge.png"/>
-                                </div>
-                                <hr>
-                                <div class="fit">
-                                    <button type="button" id="btn_copy_name" class="button button1">copy</button>
-                                    <span id="name"></span>
-                                    <span>نام</span>
-                                    <img width="30px" height="30px" src="./assets/icons/profile.png"/>
-                                </div>
-                                <hr>
-                                <div class="fit">
-                                    <button type="button" id="btn_copy_phone" class="button button1">copy</button>
-                                    <span id="phone"></span>
-                                    <span>تلفن</span>
-                                    <img width="30px" height="30px" src="./assets/icons/phone.png"/>
-                                </div>
-                                <hr>
-                                <div class="fit">
-                                    <button type="button" id="btn_copy_mobile" class="button button1">copy</button>
-                                    <span id="mobile"></span>
-                                    <span>موبایل</span>
-                                    <img width="30px" height="30px" src="./assets/icons/mobile.png"/>
-                                </div>
-                                <hr>
-                                <div class="fit">
-                                    <button type="button" id="btn_copy_email" class="button button1">copy</button>
-                                    <span id="email"></span>
-                                    <span>ایمیل</span>
-                                    <img width="30px" height="30px" src="./assets/icons/email-sign.png"/>
-                                </div>
-                                <hr>
-                                <div class="fit">
-                                    <button type="button" id="btn_copy_ip" class="button button1">copy</button>
-                                    <span id="ip"></span>
-                                    <span>آی پی</span>
-                                    <img width="30px" height="30px" src="./assets/icons/ip.png"/>
-                                </div>
-                            </div>
-                            <!-- <div class="row">
-                                <button  type="button" id="btn_code_meli_round">کد ملی رند</button>
-                                <p id="message">صحت کد ملی</p>
-                                <div class="col-md-3">
-                                    <input type="text" name="code_melli" class="form-control input-sm" id="code_melli" placeholder="کد ملی مورد نظر" />
-                                </div>
-                                
-                                <button  type="button" id="btn_code_melli">بررسی</button>
+        <!-- CTA -->
+      </div>
+    </nav>
 
-                            </div> -->
-                        
-                        
-                    </div>
-                </div>
-            </div>
+    <div class="toast-container position-fixed top-0 end-0 p-3">
+      <div
+        id="basicToast"
+        class="toast"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+      >
+        <div class="toast-header bg-info">
+          <img src="./assets/icons/info-circle.svg" />
+          <button
+            type="button"
+            class="btn-close me-auto"
+            data-bs-dismiss="toast"
+            aria-label="Close"
+          ></button>
         </div>
-      
-        <script src="./lib/jquery.min.js"></script>
-        
-        <script src="./lib/chance.min.js"></script>
-        <script>
-            console.log(chance.bool());
-            console.log(chance.age());
-            console.log(chance.email({domain:'gmail.com'}));
-            console.log(chance.avatar({fileExtension: 'jpg'}));
-            
-        
-        </script>
-        <script type="text/javascript">
-            $(function () {
-                console.log('Hi');
-              
-                $("#message").hide();
-                $("#btn_code_melli").click(function () {
-                    $("#message").hide();
-                    $("#message").empty();
-                    if ($("#code_melli").val() == '' || $("#code_melli").val() == null) {
-                        $("#message").show();
-                        $("#message").removeClass("alert-success");
-                        $("#message").addClass("alert-warning");
-                        $("#message").append("کد ملی را وارد نمایید است");
-                        return;
-                    }
-                    var allDigitEqual = ["0000000000", "1111111111", "2222222222", "3333333333", "4444444444", "5555555555", "6666666666", "7777777777", "8888888888", "9999999999"];
-                    codeMelliPattern = /^([0-9]{10})+$/;
-                    if (allDigitEqual.indexOf($("#code_melli").val()) != -1 || !codeMelliPattern.test($("#code_melli").val())) {
-                        $("#message").show();
-                        $("#message").removeClass("alert-success");
-                        $("#message").addClass("alert-warning");
-                        $("#message").append("کد ملی نادرست است");
-                        return;
-                    }
-                    var chArray = Array.from($("#code_melli").val());
-                    var num0 = parseInt(chArray[0]) * 10;
-                    var num2 = parseInt(chArray[1]) * 9;
-                    var num3 = parseInt(chArray[2]) * 8;
-                    var num4 = parseInt(chArray[3]) * 7;
-                    var num5 = parseInt(chArray[4]) * 6;
-                    var num6 = parseInt(chArray[5]) * 5;
-                    var num7 = parseInt(chArray[6]) * 4;
-                    var num8 = parseInt(chArray[7]) * 3;
-                    var num9 = parseInt(chArray[8]) * 2;
-                    var a = parseInt(chArray[9]);
-        
-                    var b = (((((((num0 + num2) + num3) + num4) + num5) + num6) + num7) + num8) + num9;
-                    var c = b % 11;
-        
-                    var res = (((c < 2) && (a == c)) || ((c >= 2) && ((11 - c) == a)));
-                    if (res == true) {
-                        $("#message").show();
-                        $("#message").removeClass("alert-warning");
-                        $("#message").addClass("alert-success");
-                        $("#message").append("کد ملی صحیح است");
-                        return;
-                    }
-                    else {
-                        $("#message").show();
-                        $("#message").removeClass("alert-success");
-                        $("#message").addClass("alert-warning");
-                        $("#message").append("کد ملی نادرست است");
-                        return;
-                    }
-                });
-            });
+        <div class="toast-body" id="toastBody"></div>
+      </div>
+    </div>
 
-            function checkNationalCode(nationalCode) {
-                var allDigitEqual = ["0000000000", "1111111111", "2222222222", "3333333333", "4444444444", "5555555555", "6666666666", "7777777777", "8888888888", "9999999999"];
-                        codeMelliPattern = /^([0-9]{10})+$/;
-                        if (allDigitEqual.indexOf(nationalCode) != -1 || !codeMelliPattern.test(nationalCode)) {
-                            return false;
-                        }
-                        var chArray = Array.from(nationalCode);
-                        var num0 = parseInt(chArray[0]) * 10;
-                        var num2 = parseInt(chArray[1]) * 9;
-                        var num3 = parseInt(chArray[2]) * 8;
-                        var num4 = parseInt(chArray[3]) * 7;
-                        var num5 = parseInt(chArray[4]) * 6;
-                        var num6 = parseInt(chArray[5]) * 5;
-                        var num7 = parseInt(chArray[6]) * 4;
-                        var num8 = parseInt(chArray[7]) * 3;
-                        var num9 = parseInt(chArray[8]) * 2;
-                        var a = parseInt(chArray[9]);
-            
-                        var b = (((((((num0 + num2) + num3) + num4) + num5) + num6) + num7) + num8) + num9;
-                        var c = b % 11;
-            
-                        var res = (((c < 2) && (a == c)) || ((c >= 2) && ((11 - c) == a)));
-                        if (res == true) {
-                            return true;
-                        }
-                        else {
-                            return false;
-                        }
-            }
+    <div class="d-flex justify-content-center mt-5">
+      <div class="col-2">
+        <div class="form-floating mb-3">
+          <select
+            class="form-select"
+            id="select_mobile_number"
+            aria-label="mobile_number"
+          >
+            <option selected>انتخاب کنید</option>
+            <option value="0910">0910</option>
+            <option value="0911">0911</option>
+            <option value="0912">0912</option>
+            <option value="0913">0913</option>
+            <option value="0914">0914</option>
+            <option value="0915">0915</option>
+            <option value="0916">0916</option>
+            <option value="0917">0917</option>
+            <option value="0918">0918</option>
+            <option value="0990">0990</option>
+            <option value="0991">0991</option>
+            <option value="0992">0992</option>
+            <option value="0993">0993</option>
+            <option value="0994">0994</option>
+            <option value="0995">0995</option>
+            <option value="0996">0996</option>
+          </select>
+          <label class="me-auto" for="floatingSelect"
+            >پیش شماره همراه دلخواه</label
+          >
+        </div>
+      </div>
+    </div>
 
-            $(
-                function() {
-                    console.log('generating data...');
-                    var nationalCode;
-                    while(true){
-                        nationalCode = '00'+Math.floor((Math.random() * 9999999) + 10000000);
-                        if(checkNationalCode(nationalCode)){
-                            console.log(nationalCode);
-                            break;
-                        }
-                    }
-                    $("#generatedNationalCode").show();
-                    $("#generatedNationalCode").append(nationalCode);
-                     twoDigit = Math.floor((Math.random() * 9) + 1);
-                     phone = '021'+twoDigit+twoDigit+Math.floor((Math.random() * 999) + 100000);
-                    $('#phone').show();
-                    $('#phone').append(phone);
-                    $('#mobile').show();
-                    preMobileNumber = ['0912','0901','0939','0937','0936','0921','0922','0909','0910','0911','0912'];
-                    $('#mobile').append(preMobileNumber[Math.floor((Math.random() * 9) + 1)]+Math.floor((Math.random() * 999) + 1000000));
-                    var uri = "https://raw.githubusercontent.com/hamedpa/persian-gender-detection/master/finalDB.csv";
-                    $.get(uri, function(data){
-                        csvRows = data.split("\n")[twoDigit+twoDigit+Math.floor((Math.random() * 999) + 20000)];
-                        firstName = csvRows.split(',')[0];
-                        gender = csvRows.split(',')[1];
-                        console.log(firstName);
-                        $('#name').show();
-                        $('#name').append(firstName);
-                    });
-                    $('#email').show();
-                    emailChoose = chance.bool();
-                    var email;
-                    if(emailChoose){
-                        email = chance.email({domain:'gmail.com'});
-                    }
-                    else{
-                        email = chance.email();
-                    }
-                    $('#email').append(email);
-                    $('#ip').show();
-                    $('#ip').append(chance.ip());
-                }
-            )
-            $("#btn_code_meli_round").click(function () {
-                while(true){
-                        nationalCode = '000'+Math.floor((Math.random() * 99) + 10)+'00'+Math.floor((Math.random() * 9) + 1)+'00';
-                        // console.log(nationalCode);
-                        // break
-                        if(checkNationalCode(nationalCode)){
-                            console.log(nationalCode);
-                            break;
-                        }
-                    }
-                    $("#generatedNationalCode").show();
-                    $("#generatedNationalCode").empty();
-                    $("#generatedNationalCode").append(nationalCode);
-                    
-            });
-            function copyToClipboard(element) {
-                var $temp = $("<input>");
-                $("body").append($temp);
-                $temp.val($(element).text()).select();
-                document.execCommand("copy");
-                $temp.remove();
-            }
-            $("#btn_copy_nationalCode").click(function () {
-                copyToClipboard($("#generatedNationalCode"));
-               
-            });
-            $("#btn_copy_name").click(function () {
-                copyToClipboard($("#name"));
-            });
-            $("#btn_copy_phone").click(function () {
-                copyToClipboard($("#phone"));
-            });
-            $("#btn_copy_mobile").click(function () {
-                copyToClipboard($("#mobile"));
-            });
-            $("#btn_copy_email").click(function () {
-                copyToClipboard($("#email"));
-            });
-            $("#btn_copy_ip").click(function () {
-                copyToClipboard($("#ip"));
-            });
-        </script>
-    </body>
+    <div class="d-flex justify-content-center mt-5">
+      <div class="table-responsive col-6">
+        <table class="table">
+          <tbody>
+            <tr>
+              <th class="th-icon" scope="row">
+                <img src="./assets/icons/badge.png" />
+              </th>
+              <td class="fw-bold">کد ملی</td>
+              <td
+                class="text-danger fw-bolder fs-4"
+                id="generatedNationalCode"
+              ></td>
+              <td class="td-copy-button">
+                <button
+                  type="button"
+                  class="btn btn-light"
+                  id="btn_copy_nationalCode"
+                >
+                  Copy
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <th class="th-icon" scope="row">
+                <img src="./assets/icons/badge.png" />
+              </th>
+              <td class="fw-bold">کد ملی رند</td>
+              <td
+                class="text-danger fw-bolder fs-4"
+                id="generatedRoundNationalCode"
+              ></td>
+              <td class="td-copy-button">
+                <button
+                  type="button"
+                  class="btn btn-light"
+                  id="btn_copy_round_nationalCode"
+                >
+                  Copy
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <th class="th-icon" scope="row">
+                <img src="./assets/icons/profile.png" />
+              </th>
+              <td class="fw-bold">نام</td>
+              <td id="name"></td>
+              <td class="td-copy-button">
+                <button type="button" class="btn btn-light" id="btn_copy_name">
+                  Copy
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <th class="th-icon" scope="row">
+                <img src="./assets/icons/phone.png" />
+              </th>
+              <td class="fw-bold">تلفن</td>
+              <td id="phone"></td>
+              <td class="td-copy-button">
+                <button type="button" class="btn btn-light" id="btn_copy_phone">
+                  Copy
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <th class="th-icon" scope="row">
+                <img src="./assets/icons/mobile.png" />
+              </th>
+              <td class="fw-bold">موبایل</td>
+              <td id="mobile"></td>
+              <td class="td-copy-button">
+                <button
+                  type="button"
+                  class="btn btn-light"
+                  id="btn_copy_mobile"
+                >
+                  Copy
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <th class="th-icon" scope="row">
+                <img src="./assets/icons/email-sign.png" />
+              </th>
+              <td class="fw-bold">ایمیل</td>
+              <td id="email"></td>
+              <td class="td-copy-button">
+                <button type="button" class="btn btn-light" id="btn_copy_email">
+                  Copy
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <th class="th-icon" scope="row">
+                <img src="./assets/icons/postcode.png" />
+              </th>
+              <td class="fw-bold">کد پستی</td>
+              <td id="postalCode"></td>
+              <td class="td-copy-button">
+                <button
+                  type="button"
+                  class="btn btn-light"
+                  id="btn_copy_postalCode"
+                >
+                  Copy
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <th class="th-icon" scope="row">
+                <img src="./assets/icons/address.png" />
+              </th>
+              <td class="fw-bold">آدرس</td>
+              <td id="address"></td>
+              <td class="td-copy-button">
+                <button
+                  type="button"
+                  class="btn btn-light"
+                  id="btn_copy_address"
+                >
+                  Copy
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <th class="th-icon" scope="row">
+                <img src="./assets/icons/ip.png" />
+              </th>
+              <td class="fw-bold">آی پی</td>
+              <td id="ip"></td>
+              <td class="td-copy-button">
+                <button type="button" class="btn btn-light" id="btn_copy_ip">
+                  Copy
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./lib/jquery.min.js"></script>
+
+    <script src="./lib/chance.min.js"></script>
+    <script>
+      console.log(chance.bool());
+      console.log(chance.age());
+      console.log(
+        chance.email({
+          domain: "gmail.com",
+        })
+      );
+      console.log(
+        chance.avatar({
+          fileExtension: "jpg",
+        })
+      );
+    </script>
+    <script type="text/javascript">
+      $(function () {
+        console.log("Hi");
+
+        $("#message").hide();
+        $("#btn_code_melli").click(function () {
+          $("#message").hide();
+          $("#message").empty();
+          if ($("#code_melli").val() == "" || $("#code_melli").val() == null) {
+            $("#message").show();
+            $("#message").removeClass("alert-success");
+            $("#message").addClass("alert-warning");
+            $("#message").append("کد ملی را وارد نمایید است");
+            return;
+          }
+          var allDigitEqual = [
+            "0000000000",
+            "1111111111",
+            "2222222222",
+            "3333333333",
+            "4444444444",
+            "5555555555",
+            "6666666666",
+            "7777777777",
+            "8888888888",
+            "9999999999",
+          ];
+          codeMelliPattern = /^([0-9]{10})+$/;
+          if (
+            allDigitEqual.indexOf($("#code_melli").val()) != -1 ||
+            !codeMelliPattern.test($("#code_melli").val())
+          ) {
+            $("#message").show();
+            $("#message").removeClass("alert-success");
+            $("#message").addClass("alert-warning");
+            $("#message").append("کد ملی نادرست است");
+            return;
+          }
+          var chArray = Array.from($("#code_melli").val());
+          var num0 = parseInt(chArray[0]) * 10;
+          var num2 = parseInt(chArray[1]) * 9;
+          var num3 = parseInt(chArray[2]) * 8;
+          var num4 = parseInt(chArray[3]) * 7;
+          var num5 = parseInt(chArray[4]) * 6;
+          var num6 = parseInt(chArray[5]) * 5;
+          var num7 = parseInt(chArray[6]) * 4;
+          var num8 = parseInt(chArray[7]) * 3;
+          var num9 = parseInt(chArray[8]) * 2;
+          var a = parseInt(chArray[9]);
+
+          var b = num0 + num2 + num3 + num4 + num5 + num6 + num7 + num8 + num9;
+          var c = b % 11;
+
+          var res = (c < 2 && a == c) || (c >= 2 && 11 - c == a);
+          if (res == true) {
+            $("#message").show();
+            $("#message").removeClass("alert-warning");
+            $("#message").addClass("alert-success");
+            $("#message").append("کد ملی صحیح است");
+            return;
+          } else {
+            $("#message").show();
+            $("#message").removeClass("alert-success");
+            $("#message").addClass("alert-warning");
+            $("#message").append("کد ملی نادرست است");
+            return;
+          }
+        });
+      });
+
+      function checkNationalCode(nationalCode) {
+        var allDigitEqual = [
+          "0000000000",
+          "1111111111",
+          "2222222222",
+          "3333333333",
+          "4444444444",
+          "5555555555",
+          "6666666666",
+          "7777777777",
+          "8888888888",
+          "9999999999",
+        ];
+        codeMelliPattern = /^([0-9]{10})+$/;
+        if (
+          allDigitEqual.indexOf(nationalCode) != -1 ||
+          !codeMelliPattern.test(nationalCode)
+        ) {
+          return false;
+        }
+        var chArray = Array.from(nationalCode);
+        var num0 = parseInt(chArray[0]) * 10;
+        var num2 = parseInt(chArray[1]) * 9;
+        var num3 = parseInt(chArray[2]) * 8;
+        var num4 = parseInt(chArray[3]) * 7;
+        var num5 = parseInt(chArray[4]) * 6;
+        var num6 = parseInt(chArray[5]) * 5;
+        var num7 = parseInt(chArray[6]) * 4;
+        var num8 = parseInt(chArray[7]) * 3;
+        var num9 = parseInt(chArray[8]) * 2;
+        var a = parseInt(chArray[9]);
+
+        var b = num0 + num2 + num3 + num4 + num5 + num6 + num7 + num8 + num9;
+        var c = b % 11;
+
+        var res = (c < 2 && a == c) || (c >= 2 && 11 - c == a);
+        if (res == true) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+
+      function generatePostalCode() {
+        postalCodePattern = /\b(?!(\d)\1{3})[13-9]{4}[1346-9][013-9]{5}\b/;
+        var postalCode;
+        while (true) {
+          postalCode = chance.integer({ min: 0, max: 10000000000000 });
+
+          if (postalCodePattern.test(postalCode)) {
+            break;
+          }
+        }
+        return postalCode;
+      }
+      function generateAddress() {
+        var uri =
+          "https://raw.githubusercontent.com/hamedpa/persian-dev-tool/master/data/address.csv";
+        $.get(uri, function (data) {
+          csvRows = data.split("\n")[chance.integer({ min: 1, max: 103275 })];
+          let alley = data
+            .split("\n")
+            [chance.integer({ min: 1, max: 103275 })].split(",")[7]
+            .split(" ");
+          if (alley.length > 1) {
+            alley = alley[1];
+          } else {
+            alley = alley[0];
+          }
+          const prefixAddress = [
+            "استان",
+            "شهر",
+            "محله",
+            "خیابان",
+            "کوچه",
+            "پلاک",
+            "طبقه",
+            "واحد",
+          ];
+          const address = {
+            province: chance.bool()
+              ? prefixAddress[0] + " " + csvRows.split(",")[1]
+              : csvRows.split(",")[1],
+            city: chance.bool()
+              ? prefixAddress[1] + " " + csvRows.split(",")[3]
+              : csvRows.split(",")[3],
+            origin: chance.bool()
+              ? chance.bool()
+                ? prefixAddress[2] + " " + csvRows.split(",")[7]
+                : prefixAddress[3] + " " + csvRows.split(",")[7]
+              : csvRows.split(",")[7],
+            alley: chance.bool() ? prefixAddress[4] + " " + alley : alley,
+            plaque: chance.bool()
+              ? prefixAddress[5] + " " + chance.integer({ min: 1, max: 50 })
+              : chance.integer({ min: 1, max: 50 }),
+            floor: chance.bool()
+              ? prefixAddress[6] + " " + chance.integer({ min: 1, max: 6 })
+              : chance.integer({ min: 1, max: 6 }),
+            part: chance.bool()
+              ? prefixAddress[7] + " " + chance.integer({ min: 1, max: 20 })
+              : chance.integer({ min: 1, max: 20 }),
+          };
+          const seprator = [
+            ",",
+            "_",
+            " ",
+            "‌",
+            "،",
+            " , ",
+            " _",
+            "-",
+            " - ",
+            "- ",
+            " -",
+            " ، ",
+          ];
+          var result = Object.values(address).join(
+            seprator[chance.integer({ min: 0, max: 13 })]
+          );
+          return result;
+        });
+      }
+      $(function () {
+        console.log("generating data...");
+        var nationalCode, roundNationalCode;
+        while (true) {
+          nationalCode = "00" + Math.floor(Math.random() * 9999999 + 10000000);
+          if (checkNationalCode(nationalCode)) {
+            console.log(nationalCode);
+            break;
+          }
+        }
+        $("#generatedNationalCode").show();
+        $("#generatedNationalCode").append(nationalCode);
+        while (true) {
+          var randNum = Math.floor(Math.random() * 101);
+          var reverseNum = parseInt(
+            randNum.toString().split("").reverse().join("")
+          );
+          roundNationalCode = "000" + randNum + reverseNum + "000";
+          if (checkNationalCode(roundNationalCode)) {
+            console.log(roundNationalCode);
+            break;
+          }
+        }
+        $("#generatedRoundNationalCode").show();
+        $("#generatedRoundNationalCode").append(roundNationalCode);
+        twoDigit = Math.floor(Math.random() * 9 + 1);
+        phone =
+          "021" +
+          twoDigit +
+          twoDigit +
+          Math.floor(Math.random() * 999 + 100000);
+        $("#phone").show();
+        $("#phone").append(phone);
+        $("#mobile").show();
+        preMobileNumber = [
+          "0912",
+          "0901",
+          "0939",
+          "0937",
+          "0936",
+          "0921",
+          "0922",
+          "0909",
+          "0910",
+          "0911",
+          "0912",
+        ];
+        $("#mobile").append(
+          preMobileNumber[Math.floor(Math.random() * 9 + 1)] +
+            chance.integer({ min: 0, max: 10000000 })
+        );
+        var uri =
+          "https://raw.githubusercontent.com/hamedpa/persian-gender-detection/master/finalDB.csv";
+        $.get(uri, function (data) {
+          csvRows =
+            data.split("\n")[
+              twoDigit + twoDigit + Math.floor(Math.random() * 999 + 20000)
+            ];
+          firstName = csvRows.split(",")[0];
+          gender = csvRows.split(",")[1];
+          console.log(firstName);
+          $("#name").show();
+          $("#name").append(firstName);
+        });
+        $("#email").show();
+        emailChoose = chance.bool();
+        var email;
+        if (emailChoose) {
+          email = chance.email({
+            domain: "gmail.com",
+          });
+        } else {
+          email = chance.email();
+        }
+        $("#email").append(email);
+        $("#ip").show();
+        $("#ip").append(chance.ip());
+
+        $("#postalCode").show();
+        $("#postalCode").append(generatePostalCode());
+
+        var uri =
+          "https://raw.githubusercontent.com/hamedpa/persian-dev-tool/master/data/address.csv";
+        $.get(uri, function (data) {
+          csvRows = data.split("\n")[chance.integer({ min: 1, max: 103275 })];
+          let alley = data
+            .split("\n")
+            [chance.integer({ min: 1, max: 103275 })].split(",")[7]
+            .split(" ");
+          if (alley.length > 1) {
+            alley = alley[1];
+          } else {
+            alley = alley[0];
+          }
+          const prefixAddress = [
+            "استان",
+            "شهر",
+            "محله",
+            "خیابان",
+            "کوچه",
+            "پلاک",
+            "طبقه",
+            "واحد",
+          ];
+          const address = {
+            province: chance.bool()
+              ? prefixAddress[0] + " " + csvRows.split(",")[1]
+              : csvRows.split(",")[1],
+            city: chance.bool()
+              ? prefixAddress[1] + " " + csvRows.split(",")[3]
+              : csvRows.split(",")[3],
+            origin: chance.bool()
+              ? chance.bool()
+                ? prefixAddress[2] + " " + csvRows.split(",")[7]
+                : prefixAddress[3] + " " + csvRows.split(",")[7]
+              : csvRows.split(",")[7],
+            alley: chance.bool() ? prefixAddress[4] + " " + alley : alley,
+            plaque: chance.bool()
+              ? prefixAddress[5] + " " + chance.integer({ min: 1, max: 50 })
+              : chance.integer({ min: 1, max: 50 }),
+            floor: chance.bool()
+              ? prefixAddress[6] + " " + chance.integer({ min: 1, max: 6 })
+              : chance.integer({ min: 1, max: 6 }),
+            part: chance.bool()
+              ? prefixAddress[7] + " " + chance.integer({ min: 1, max: 20 })
+              : chance.integer({ min: 1, max: 20 }),
+          };
+          const seprator = [
+            ",",
+            "_",
+            " ",
+            "‌",
+            "،",
+            " , ",
+            " _",
+            "-",
+            " - ",
+            "- ",
+            " -",
+            " ، ",
+          ];
+          var result = Object.values(address).join(
+            seprator[chance.integer({ min: 0, max: 13 })]
+          );
+          $("#address").show();
+          $("#address").append(result);
+          $("#select_mobile_number").change(function () {
+            var mobileValue = $("#select_mobile_number option:selected").val();
+            $("#mobile").text(
+              mobileValue + chance.integer({ min: 0, max: 10000000 })
+            );
+          });
+        });
+      });
+      $("#btn_code_meli_round").click(function () {
+        while (true) {
+          nationalCode =
+            "000" +
+            Math.floor(Math.random() * 99 + 10) +
+            "00" +
+            Math.floor(Math.random() * 9 + 1) +
+            "00";
+          // console.log(nationalCode);
+          // break
+          if (checkNationalCode(nationalCode)) {
+            console.log(nationalCode);
+            break;
+          }
+        }
+        $("#generatedNationalCode").show();
+        $("#generatedNationalCode").empty();
+        $("#generatedNationalCode").append(nationalCode);
+      });
+
+      function copyToClipboard(element) {
+        var $temp = $("<input>");
+        $("body").append($temp);
+        $temp.val($(element).text()).select();
+        document.execCommand("copy");
+        $temp.remove();
+      }
+    </script>
+    <script>
+      $("#btn_copy_nationalCode,#generatedNationalCode").click(function () {
+        copyToClipboard($("#generatedNationalCode"));
+        notification("کد ملی");
+      });
+      $("#btn_copy_round_nationalCode,#generatedRoundNationalCode").click(
+        function () {
+          copyToClipboard($("#generatedRoundNationalCode"));
+          notification("کد ملی رند");
+        }
+      );
+      $("#btn_copy_name,#name").click(function () {
+        copyToClipboard($("#name"));
+        notification("نام");
+      });
+      $("#btn_copy_phone,#phone").click(function () {
+        copyToClipboard($("#phone"));
+        notification("تلفن");
+      });
+      $("#btn_copy_mobile,#mobile").click(function () {
+        copyToClipboard($("#mobile"));
+        notification("موبایل");
+      });
+      $("#btn_copy_email,#email").click(function () {
+        copyToClipboard($("#email"));
+        notification("ایمیل");
+      });
+      $("#btn_copy_ip,#ip").click(function () {
+        copyToClipboard($("#ip"));
+        notification("آی پی");
+      });
+      $("#btn_copy_postalCode,#postalCode").click(function () {
+        copyToClipboard($("#postalCode"));
+        notification("کد پستی");
+      });
+      $("#btn_copy_address,#address").click(function () {
+        copyToClipboard($("#address"));
+        notification("آدرس");
+      });
+
+      function notification(field) {
+        $("#toastBody").text(`${field} با موفقیت در کلیپ بورد شما کپی شد`);
+        new bootstrap.Toast(document.querySelector("#basicToast")).show();
+      }
+    </script>
+  </body>
 </html>
