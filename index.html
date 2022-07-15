@@ -142,7 +142,7 @@
         <select
             class="form-select form-select-sm mb-3"
             aria-label=".form-select-sm example"
-            id="select_email_number"
+            id="select_email"
         >
             <option selected>دامنه ایمیل دلخواه خود را انتخاب کنید</option>
         </select>
@@ -593,7 +593,7 @@
           }
         ];
         $.each(emailDomains, function (key, value) {
-          $("#select_email_number").append(
+          $("#select_email").append(
             $("<option></option>").attr("value", value.domain).text(value.name)
           );
         });
@@ -702,7 +702,7 @@
               mobileValue + chance.integer({ min: 0, max: 10000000 })
             );
           });
-          $("#select_email_number").change(function () {
+          $("#select_email").change(function () {
             var emailValue = $("#select_email option:selected").val();
             $("#email").text(
                  chance.email({domain: emailValue})
