@@ -2,9 +2,8 @@ body {
   background-color: #e5e5e5;
 }
 .logo {
-  display: block;
-  margin: 8px auto;
   width: 120px;
+  margin: 5px 0;
 }
 .th-icon {
   width: 20px !important;
