@@ -8,36 +8,17 @@
     <meta name="description" content="تولید کد ملی رایگان" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="stylesheet" href="./assets/styles/style.css">
+    <link rel="stylesheet" href="./assets/styles/style.css" />
     <link href="./assets/styles/bootstrap.min.css" rel="stylesheet" />
-
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-light primary-color">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-light">
       <div class="container">
-        <!-- Collapse button -->
-        <button
-          class="navbar-toggler float-right"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <!-- Collapsible content -->
-        <div
-          class="collapse navbar-collapse justify-content-center"
-          id="navbarSupportedContent"
-        >
-          <a href="/persian-dev-tool"
+        <div class="mx-auto">
+          <a class="navbar-brand" href="/persian-dev-tool"
             ><img class="logo" src="./assets//icons/logo_dark.svg"
           /></a>
         </div>
-        <!-- CTA -->
       </div>
     </nav>
 
@@ -126,7 +107,7 @@
           aria-labelledby="nav-home-tab"
         >
           <select
-            class="form-select form-select-sm mb-3"
+            class="form-select form-select-sm"
             aria-label=".form-select-sm example"
             id="select_mobile_number"
           >
@@ -139,13 +120,13 @@
           role="tabpanel"
           aria-labelledby="nav-email-tab"
         >
-        <select
-            class="form-select form-select-sm mb-3"
+          <select
+            class="form-select form-select-sm"
             aria-label=".form-select-sm example"
             id="select_email"
-        >
+          >
             <option selected>دامنه ایمیل دلخواه خود را انتخاب کنید</option>
-        </select>
+          </select>
         </div>
         <div
           class="tab-pane fade"
@@ -166,7 +147,7 @@
       </div>
     </div>
 
-    <div class="d-flex justify-content-center mt-5">
+    <div class="d-flex justify-content-center mt-2">
       <div class="table-responsive col-6">
         <table class="table">
           <tbody>
@@ -576,21 +557,21 @@
         );
         emailDomains = [
           {
-              name: 'Gmail',
-              domain: 'gmail.com'
+            name: "Gmail",
+            domain: "gmail.com",
           },
           {
-              name: 'Yahoo',
-              domain: 'yahoo.com'
+            name: "Yahoo",
+            domain: "yahoo.com",
           },
           {
-              name: 'Hotmail',
-              domain: 'hotmail.com'
+            name: "Hotmail",
+            domain: "hotmail.com",
           },
           {
-              name: 'Mail',
-              domain: 'mail.com'
-          }
+            name: "Mail",
+            domain: "mail.com",
+          },
         ];
         $.each(emailDomains, function (key, value) {
           $("#select_email").append(
@@ -704,9 +685,7 @@
           });
           $("#select_email").change(function () {
             var emailValue = $("#select_email option:selected").val();
-            $("#email").text(
-                 chance.email({domain: emailValue})
-            );
+            $("#email").text(chance.email({ domain: emailValue }));
           });
         });
       });
