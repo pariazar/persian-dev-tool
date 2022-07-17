@@ -44,67 +44,45 @@
     </div>
 
     <div class="d-flex justify-content-center mt-5">
-      <nav>
-        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
           <button
             class="nav-link active"
-            id="nav-home-tab"
+            id="mobile-tab"
             data-bs-toggle="tab"
-            data-bs-target="#nav-home"
+            data-bs-target="#select_mobile_tab"
             type="button"
             role="tab"
-            aria-controls="nav-home"
+            aria-controls="select_mobile_tab"
             aria-selected="true"
           >
             شماره همراه
           </button>
+        </li>
+        <li class="nav-item" role="presentation">
           <button
             class="nav-link"
-            id="nav-email-tab"
+            id="email-tab"
             data-bs-toggle="tab"
-            data-bs-target="#nav-email"
+            data-bs-target="#select_email_tab"
             type="button"
             role="tab"
-            aria-controls="nav-email"
+            aria-controls="select_email_tab"
             aria-selected="false"
           >
             ایمیل
           </button>
-          <button
-            class="nav-link"
-            id="nav-profile-tab"
-            data-bs-toggle="tab"
-            data-bs-target="#nav-profile"
-            type="button"
-            role="tab"
-            aria-controls="nav-profile"
-            aria-selected="false"
-          >
-            Profile
-          </button>
-          <button
-            class="nav-link"
-            id="nav-contact-tab"
-            data-bs-toggle="tab"
-            data-bs-target="#nav-contact"
-            type="button"
-            role="tab"
-            aria-controls="nav-contact"
-            aria-selected="false"
-          >
-            Contact
-          </button>
-        </div>
-      </nav>
+        </li>
+      </ul>
     </div>
 
     <div class="d-flex justify-content-center mt-3">
-      <div class="tab-content" id="nav-tabContent">
+      <div class="tab-content" id="myTabContent">
         <div
           class="tab-pane fade show active"
-          id="nav-home"
+          id="select_mobile_tab"
           role="tabpanel"
-          aria-labelledby="nav-home-tab"
+          aria-labelledby="select_mobile_tab"
         >
           <select
             class="form-select form-select-sm"
@@ -115,10 +93,10 @@
           </select>
         </div>
         <div
-          class="tab-email fade"
-          id="nav-email"
+          class="tab-pane fade"
+          id="select_email_tab"
           role="tabpanel"
-          aria-labelledby="nav-email-tab"
+          aria-labelledby="select_email_tab"
         >
           <select
             class="form-select form-select-sm"
@@ -127,22 +105,6 @@
           >
             <option selected>دامنه ایمیل دلخواه خود را انتخاب کنید</option>
           </select>
-        </div>
-        <div
-          class="tab-pane fade"
-          id="nav-profile"
-          role="tabpanel"
-          aria-labelledby="nav-profile-tab"
-        >
-          ...
-        </div>
-        <div
-          class="tab-pane fade"
-          id="nav-contact"
-          role="tabpanel"
-          aria-labelledby="nav-contact-tab"
-        >
-          ...
         </div>
       </div>
     </div>
