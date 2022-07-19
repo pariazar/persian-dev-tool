@@ -540,10 +540,10 @@
             $("<option></option>").attr("value", value.domain).text(value.name)
           );
         });
-        $("#mobile").append(
-          preMobileNumber[Math.floor(Math.random() * 9 + 1)] +
-            chance.integer({ min: 0, max: 10000000 })
-        );
+        // $("#mobile").append(
+        //   preMobileNumber[Math.floor(Math.random() * 9 + 1)] +
+        //     chance.integer({ min: 0, max: 10000000 })
+        // );
         var uri =
           "https://raw.githubusercontent.com/hamedpa/persian-gender-detection/master/finalDB.csv";
         $.get(uri, function (data) {
