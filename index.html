@@ -475,11 +475,14 @@
         $("#generatedNationalCode").show();
         $("#generatedNationalCode").append(nationalCode);
         while (true) {
+          var fixedNum = Math.floor(Math.random() * 10)
+            .toString()
+            .repeat(3);
           var randNum = Math.floor(Math.random() * 101);
           var reverseNum = parseInt(
             randNum.toString().split("").reverse().join("")
           );
-          roundNationalCode = "000" + randNum + reverseNum + "000";
+          roundNationalCode = fixedNum + randNum + reverseNum + fixedNum;
           if (checkNationalCode(roundNationalCode)) {
             console.log(roundNationalCode);
             break;
